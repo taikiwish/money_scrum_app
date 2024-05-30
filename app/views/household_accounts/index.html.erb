@@ -4,7 +4,7 @@
   <section class="main-visual">
     <h1>家計簿応援隊 - MoneyScram</h1>
     <p>あなたの家計をサポートします</p>
-    <%= link_to '家計簿の投稿をする', new_user_registration_path, class: 'btn btn-primary' %>
+    <%= link_to '家計簿の投稿をする', "#", class: 'btn btn-primary' %>
   </section>
 
   <!-- コンテンツの特徴 -->
@@ -50,15 +50,23 @@
 
   <!-- 家計改善のコツ -->
   <section class="blog-tips">
-    <h2>家計改善のコツ</h2>
     <div class="tips-container">
-      <% @blog_posts.each do |post| %>
-        <div class="tip">
-          <h3><%= post.title %></h3>
-          <p><%= truncate(post.content, length: 100) %></p>
-          <%= link_to '続きを読む', blog_post_path(post), class: 'btn btn-secondary' %>
-        </div>
-      <% end %>
+      <h2>家計改善のコツ</h2>
+    <div class="tip">
+      <h3>節約のコツ</h3>
+      <p>毎日の支出を見直し、小さな節約を積み重ねることが大切です...</p>
+      <%= link_to '続きを読む', '#', class: 'btn btn-secondary' %>
+    </div>
+    <div class="tip">
+      <h3>貯金のコツ</h3>
+      <p>毎月一定額を自動的に貯金する仕組みを作りましょう...</p>
+      <%= link_to '続きを読む', '#', class: 'btn btn-secondary' %>
+    </div>
+    <div class="tip">
+      <h3>投資の始め方</h3>
+      <p>初めての投資は少額から始め、リスクを分散させることが重要です...</p>
+      <%= link_to '続きを読む', '#', class: 'btn btn-secondary' %>
+    </div>
     </div>
   </section>
 
