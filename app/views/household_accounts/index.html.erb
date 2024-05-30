@@ -1,0 +1,65 @@
+<%= render 'shared/header' %>
+
+  <!-- メインビジュアル -->
+  <section class="main-visual">
+    <h1>家計簿応援隊 - MoneyScram</h1>
+    <p>あなたの家計をサポートします</p>
+    <%= link_to '家計簿の投稿をする', new_user_registration_path, class: 'btn btn-primary' %>
+  </section>
+
+  <!-- コンテンツの特徴 -->
+  <section class="features">
+    <div class="feature">
+      <h2>簡単登録</h2>
+      <p>家計簿の登録が簡単に行えます。</p>
+    </div>
+    <div class="feature">
+      <h2>見やすいグラフ</h2>
+      <p>支出をグラフで視覚的に確認できます。</p>
+    </div>
+    <div class="feature">
+      <h2>家計改善のコツ</h2>
+      <p>プロのアドバイスで家計を見直しましょう。</p>
+    </div>
+  </section>
+
+  <!-- 今月の家計簿投稿 -->
+  <section class="recent-household-accounts">
+    <h2>今月の家計簿投稿</h2>
+    <div class="household-accounts-container">
+      <div class="household-account">
+        <h3>ユーザー1の家計簿</h3>
+        <p>年齢: 30歳</p>
+        <p>性別: 男性</p>
+        <p>地域: 東京都</p>
+        <p>月: 2024年5月</p>
+        <p>合計: ¥150,000</p>
+        <%= link_to '詳細を見る', "#", class: 'btn btn-secondary' %>
+      </div>
+      <div class="household-account">
+        <h3>ユーザー2の家計簿</h3>
+        <p>年齢: 25歳</p>
+        <p>性別: 女性</p>
+        <p>地域: 大阪府</p>
+        <p>月: 2024年5月</p>
+        <p>合計: ¥200,000</p>
+        <%= link_to '詳細を見る', "#", class: 'btn btn-secondary' %>
+      </div>
+    </div>
+  </section>
+
+  <!-- 家計改善のコツ -->
+  <section class="blog-tips">
+    <h2>家計改善のコツ</h2>
+    <div class="tips-container">
+      <% @blog_posts.each do |post| %>
+        <div class="tip">
+          <h3><%= post.title %></h3>
+          <p><%= truncate(post.content, length: 100) %></p>
+          <%= link_to '続きを読む', blog_post_path(post), class: 'btn btn-secondary' %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <%= render 'shared/footer' %>

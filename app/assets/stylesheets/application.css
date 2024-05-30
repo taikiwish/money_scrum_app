@@ -10,6 +10,175 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require reset
  *= require_tree .
  *= require_self
  */
+
+ /* ヘッダー */
+.top-page-header {
+  background: #f8f9fa;
+  padding: 10px 0;
+}
+
+.search-bar-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.furima-icon {
+  width: 150px;
+}
+
+.search-form {
+  display: flex;
+}
+
+.input-box {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.search-button {
+  background: #007bff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lists-left,
+.lists-right {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.category-list,
+.brand-list,
+.user-nickname,
+.logout,
+.login,
+.sign-up {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+/* メインビジュアル */
+.main-visual {
+  background: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.main-visual h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.main-visual p {
+  font-size: 1.2em;
+}
+
+.btn-primary {
+  background: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* コンテンツの特徴 */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* 今月の家計簿投稿 */
+.recent-household-accounts {
+  background: #f8f9fa;
+  padding: 50px 0;
+}
+
+.household-accounts-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.household-account {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 30%;
+}
+
+.household-account h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.household-account p {
+  margin: 5px 0;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* 家計改善のコツ */
+.blog-tips {
+  padding: 50px 0;
+}
+
+.tips-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tip {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 30%;
+}
+
+.tip h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* フッター */
+footer {
+  background: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
