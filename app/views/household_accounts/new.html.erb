@@ -7,6 +7,8 @@
     <%= render 'shared/error_messages', model: f.object %>
 
     <%# 家計簿結果入力フォーム %>
+    <label class="form-text">何月の家計簿ですか？</label><br>
+    <%= f.collection_select(:month_id, Month.all, :id, :name, {}, {class:"month-select"}) %>
     <div class="form-grid">
       <div class="form-group">
         <%= f.label :housing, "住宅" %>

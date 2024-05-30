@@ -163,6 +163,19 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.form-text{
+  font-weight: bold;
+}
+
+.month-select{
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .form-title {
   font-size: 24px;
   margin-bottom: 20px;
