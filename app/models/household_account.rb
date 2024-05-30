@@ -8,5 +8,6 @@ class HouseholdAccount < ApplicationRecord
             presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :total, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :description, length: { maximum: 500 }
+  validates :year, inclusion: { in: 2024..2040 }
   validates :month_id, numericality: { other_than: 1 , message: "can't be blank"}
 end

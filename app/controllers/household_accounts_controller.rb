@@ -19,8 +19,8 @@ class HouseholdAccountsController < ApplicationController
 private
   def household_account_params
     params.require(:household_account).permit(
-      :month_id, :housing, :food, :utilities, :communication, :daily_goods,
-      :clothing_beauty, :entertainment, :transportation,
+      :year, :month_id, :housing, :food, :utilities, :communication,
+      :daily_goods,:clothing_beauty, :entertainment, :transportation,
       :health_medical, :education, :insurance, :special_expenses,
       :total, :description
     )
