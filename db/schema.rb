@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_05_30_012547) do
   create_table "household_accounts", charset: "utf8", force: :cascade do |t|
-    t.integer "month_id", null: false
     t.integer "housing", null: false
     t.integer "food", null: false
     t.integer "utilities", null: false

@@ -1,7 +1,6 @@
 class CreateHouseholdAccounts < ActiveRecord::Migration[7.0]
   def change
     create_table :household_accounts do |t|
-      t.integer :month_id, null: false
       t.integer :housing, null: false
       t.integer :food, null: false
       t.integer :utilities, null: false
