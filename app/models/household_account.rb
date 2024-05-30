@@ -1,0 +1,2 @@
+class HouseholdAccount < ApplicationRecord
+end
