@@ -5,8 +5,8 @@
 /* ヘッダー */
 .header {
   background-color: #004b87;
-  padding: 10px 0;
-  text-align: center;
+  padding: 10px 20px;
+  /* text-align: center; */
 }
 
 .header a {
@@ -15,6 +15,8 @@
   text-decoration: none;
 }
 
+
+/* トップページ */
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.6;
@@ -22,7 +24,7 @@ body {
   padding: 0;
 }
 
-.main-visual {
+/* .main-visual {
   background: url('/path_to_your_image.jpg') no-repeat center center;
   background-size: cover;
   color: #fff;
@@ -44,6 +46,56 @@ body {
 .main-visual-text p {
   font-size: 18px;
   margin: 10px 0 0;
+} */
+
+.post-section {
+  height: 400px;
+  margin: 40px 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+}
+
+.post-text {
+  text-align: left;
+  max-width: 70%;
+}
+
+.main-title {
+  font-size: 36px;
+  margin: 0 0 10px;
+}
+
+.sub-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.post-button-container {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.post-button {
+  background-color: #1b65a1;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.post-button:hover {
+  background-color: #004b87;
 }
 
 .section {
@@ -98,6 +150,76 @@ body {
 
 .btn-secondary:hover {
   background-color: #003366;
+}
+
+/* 家計簿新規投稿ページ */
+
+.household-account-form-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.submit-button {
+  display: inline-block;
+  background-color: #1b65a1;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #004b87;
 }
 
 /* フッター */

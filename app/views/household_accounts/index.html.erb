@@ -2,14 +2,19 @@
 
 <div class="main-content">
   <!-- メインビジュアル -->
-  <div class="main-visual">
-    <div class="main-visual-text">
-      <h1>Welcome to MoneyScram</h1>
-      <p>Manage your household finances effectively</p>
-    </div>
-  </div>
 
   <!-- 家計簿投稿 -->
+  <div class="post-section">
+    <div class="post-content">
+      <div class="post-text">
+        <h2 class="main-title">家計簿を投稿しよう</h2>
+        <p class="sub-title">家計簿を共有して、家計管理を改善しましょう。</p>
+      </div>
+      <div class="post-button-container">
+        <%= link_to "家計簿を投稿する", new_household_account_path, class: "post-button" %>
+      </div>
+    </div>
+  </div>
   <div class="section household-accounts">
     <h2>今月の家計簿投稿</h2>
     <div class="household-accounts-list">
