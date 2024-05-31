@@ -20,6 +20,25 @@ class HouseholdAccountsController < ApplicationController
     @household_account = HouseholdAccount.find(params[:id])
   end
 
+  def edit
+    @household_account = HouseholdAccount.find(params[:id])
+  end
+
+  def update
+    @household_account = HouseholdAccount.find(params[:id])
+    if @household_account.update(household_account_params)
+      redirect_to household_account_path(@household_account)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @household_account = HouseholdAccount.find(params[:id])
+    @household_account.destroy
+    redirect_to '/'
+  end
+
 private
   def household_account_params
     params.require(:household_account).permit(

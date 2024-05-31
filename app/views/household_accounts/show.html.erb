@@ -18,6 +18,10 @@
     <li><strong>合計:</strong> <%= @household_account.total %>円</li>
     <li><strong>メモ:</strong> <%= @household_account.description %></li>
   </ul>
+  <div class="action-buttons">
+    <%= link_to '編集', edit_household_account_path(@household_account.id), class: 'btn btn-primary' %>
+    <%= link_to '削除', household_account_path(@household_account), data: {turbo_method: :delete}, class: 'btn btn-danger' %>
+  </div>
 </div>
 
 <%= render 'shared/footer' %>
