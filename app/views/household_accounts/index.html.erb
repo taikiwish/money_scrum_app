@@ -15,61 +15,20 @@
       </div>
     </div>
   </div>
+  <!-- 今年の家計簿一覧 -->
   <div class="section household-accounts">
-    <h2>今月の家計簿投稿</h2>
-    <div class="household-accounts-list">
-      <div class="household-account">
-        <h3>ユーザー1の家計簿</h3>
-        <p>年齢: 30歳</p>
-        <p>性別: 男性</p>
-        <p>地域: 東京</p>
-        <p>合計: ¥100,000</p>
-        <%= link_to '詳細を見る', '#', class: 'btn btn-secondary' %>
-      </div>
-      <div class="household-account">
-        <h3>ユーザー2の家計簿</h3>
-        <p>年齢: 25歳</p>
-        <p>性別: 女性</p>
-        <p>地域: 大阪</p>
-        <p>合計: ¥150,000</p>
-        <%= link_to '詳細を見る', '#', class: 'btn btn-secondary' %>
-      </div>
-      <!-- 仮の家計簿投稿を追加 -->
-      <div class="household-account">
-        <h3>ユーザー3の家計簿</h3>
-        <p>年齢: 40歳</p>
-        <p>性別: 男性</p>
-        <p>地域: 福岡</p>
-        <p>合計: ¥200,000</p>
-        <%= link_to '詳細を見る', '#', class: 'btn btn-secondary' %>
-      </div>
-      <div class="household-account">
-        <h3>ユーザー4の家計簿</h3>
-        <p>年齢: 35歳</p>
-        <p>性別: 女性</p>
-        <p>地域: 名古屋</p>
-        <p>合計: ¥180,000</p>
-        <%= link_to '詳細を見る', '#', class: 'btn btn-secondary' %>
-      </div>
-      <div class="household-account">
-        <h3>ユーザー5の家計簿</h3>
-        <p>年齢: 28歳</p>
-        <p>性別: 男性</p>
-        <p>地域: 札幌</p>
-        <p>合計: ¥120,000</p>
-        <%= link_to '詳細を見る', '#', class: 'btn btn-secondary' %>
-      </div>
-      <div class="household-account">
-        <h3>ユーザー6の家計簿</h3>
-        <p>年齢: 22歳</p>
-        <p>性別: 女性</p>
-        <p>地域: 京都</p>
-        <p>合計: ¥110,000</p>
-        <%= link_to '詳細を見る', '#', class: 'btn btn-secondary' %>
-      </div>
-    </div>
+    <h2>今年の家計簿投稿</h2>
+    <ul class="household-accounts-list">
+      <% @household_accounts.each do |account| %>
+        <li class="household-account">
+          <span class="account-year"><%= account.created_at.year %>年 <%= account.month.name %></span>
+          <span class="account-total">合計：<%= account.total %>円</span>
+          <span class="account-description"><%= truncate(account.description, length: 30) %></span>
+          <span class="account-link"><%= link_to '詳細を見る', "#", class: 'btn btn-secondary' %></span>
+        </li>
+      <% end %>
+    </ul>
   </div>
-
   <!-- 家計改善のコツ -->
   <div class="section tips-container">
     <h2>家計改善のコツ</h2>
