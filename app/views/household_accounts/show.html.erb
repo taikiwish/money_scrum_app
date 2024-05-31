@@ -1,0 +1,23 @@
+<%= render 'shared/header' %>
+
+<div class="household-account-detail">
+  <h2><%= @household_account.created_at.year %>年 <%= @household_account.month.name %>の家計簿</h2>
+  <ul>
+    <li><strong>住宅:</strong> <%= @household_account.housing %>円</li>
+    <li><strong>食費:</strong> <%= @household_account.food %>円</li>
+    <li><strong>水道光熱費:</strong> <%= @household_account.utilities %>円</li>
+    <li><strong>通信費:</strong> <%= @household_account.communication %>円</li>
+    <li><strong>日用品:</strong> <%= @household_account.daily_goods %>円</li>
+    <li><strong>美容・衣服:</strong> <%= @household_account.clothing_beauty %>円</li>
+    <li><strong>趣味・娯楽:</strong> <%= @household_account.entertainment %>円</li>
+    <li><strong>交通費:</strong> <%= @household_account.transportation %>円</li>
+    <li><strong>健康・医療:</strong> <%= @household_account.health_medical %>円</li>
+    <li><strong>教育費:</strong> <%= @household_account.education %>円</li>
+    <li><strong>保険料:</strong> <%= @household_account.insurance %>円</li>
+    <li><strong>特別費:</strong> <%= @household_account.special_expenses %>円</li>
+    <li><strong>合計:</strong> <%= @household_account.total %>円</li>
+    <li><strong>メモ:</strong> <%= @household_account.description %></li>
+  </ul>
+</div>
+
+<%= render 'shared/footer' %>

@@ -16,6 +16,10 @@ class HouseholdAccountsController < ApplicationController
     end
   end
 
+  def show
+    @household_account = HouseholdAccount.find(params[:id])
+  end
+
 private
   def household_account_params
     params.require(:household_account).permit(

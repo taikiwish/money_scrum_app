@@ -13,6 +13,20 @@
   text-decoration: none;
 }
 
+/* フッター */
+.footer {
+  background-color: #004b87;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+}
+
 /* トップページ */
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -125,6 +139,40 @@ body {
   background-color: #003366;
 }
 
+/* 今年の家計簿投稿 */
+.household-accounts ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.household-accounts-list {
+  border-radius: 8px;
+  padding: 20px;
+  flex-basis: calc(33.3333% - 20px);
+  box-sizing: border-box;
+}
+
+.household-accounts-list .account-date {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.household-accounts-list .account-total, 
+.household-accounts-list .account-description,
+.household-accounts-list .account-link {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* //////////////////////////////////////////
+下層ページ
+//////////////////////////////////////////*/
+
 /* 家計簿新規投稿ページ */
 .household-account-form-container {
   max-width: 800px;
@@ -207,46 +255,28 @@ body {
   background-color: #004b87;
 }
 
-/* フッター */
-.footer {
-  background-color: #004b87;
-  color: #ffffff;
+/* 家計簿詳細ページ */
+.household-account-detail {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.household-account-detail h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
   text-align: center;
-  padding: 20px 0;
-  bottom: 0;
-  width: 100%;
 }
 
-.footer p {
-  margin: 0;
-}
-
-/* 今年の家計簿投稿 */
-.household-accounts ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
+.household-account-detail ul {
   list-style: none;
   padding: 0;
 }
 
-.household-accounts-list {
-  border-radius: 8px;
-  padding: 20px;
-  flex-basis: calc(33.3333% - 20px);
-  box-sizing: border-box;
-}
-
-.household-accounts-list .account-date {
-  display: block;
-  margin-bottom: 10px;
-  text-decoration: underline;
-}
-
-.household-accounts-list .account-total, 
-.household-accounts-list .account-description,
-.household-accounts-list .account-link {
-  display: block;
+.household-account-detail li {
+  font-size: 18px;
   margin-bottom: 10px;
 }

@@ -24,7 +24,7 @@
           <span class="account-year"><%= account.created_at.year %>年 <%= account.month.name %></span>
           <span class="account-total">合計：<%= account.total %>円</span>
           <span class="account-description"><%= truncate(account.description, length: 30) %></span>
-          <span class="account-link"><%= link_to '詳細を見る', "#", class: 'btn btn-secondary' %></span>
+          <span class="account-link"><%= link_to '詳細を見る', household_account_path(account), class: 'btn btn-secondary' %></span>
         </li>
       <% end %>
     </ul>
