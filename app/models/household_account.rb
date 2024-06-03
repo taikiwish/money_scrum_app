@@ -10,4 +10,5 @@ class HouseholdAccount < ApplicationRecord
   validates :description, length: { maximum: 500 }
   validates :year, inclusion: { in: 2024..2040 }
   validates :month_id, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :year, uniqueness: { scope: :month_id, message: "(and month) has already been taken. Please select a different date." }
 end

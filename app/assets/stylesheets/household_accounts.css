@@ -398,3 +398,39 @@ body {
 .btn-danger:hover {
   background-color: #c82333;
 }
+
+/* 達成状況 */
+.achievement {
+  color: green;
+  font-weight: bold;
+}
+
+.non-achievement {
+  color: red;
+  font-weight: bold;
+}
+
+.achieved {
+  color: green;
+  font-weight: bold;
+}
+
+.not-achieved {
+  color: red;
+  font-weight: bold;
+}
+
+.details {
+  position: relative;
+}
+
+.achievement-image {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+}
+
+.achievement-image img {
+  width: 250px;
+  height: auto;
+}

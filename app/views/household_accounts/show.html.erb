@@ -2,47 +2,57 @@
 
 <div class="details">
   <h1 class="detail-title"><%= @household_account.created_at.year %>年 <%= @household_account.month.name %>の家計簿</h1>
+
+  <% if @total_result == '達成' %>
+    <div class="achievement-image">
+      <%= image_tag 'achievement.png', alt: '達成' %>
+    </div>
+  <% end %>
+
   <div class="details-grid">
     <div class="detail-item">
-      <strong>住宅:</strong> <span><%= @household_account.housing %>円</span>
+      <strong>住宅:</strong> <span><%= number_with_delimiter(@household_account.housing) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>食費:</strong> <span><%= @household_account.food %>円</span>
+      <strong>食費:</strong> <span><%= number_with_delimiter(@household_account.food) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>水道光熱費:</strong> <span><%= @household_account.utilities %>円</span>
+      <strong>水道光熱費:</strong> <span><%= number_with_delimiter(@household_account.utilities) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>通信費:</strong> <span><%= @household_account.communication %>円</span>
+      <strong>通信費:</strong> <span><%= number_with_delimiter(@household_account.communication) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>日用品:</strong> <span><%= @household_account.daily_goods %>円</span>
+      <strong>日用品:</strong> <span><%= number_with_delimiter(@household_account.daily_goods) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>美容・衣服:</strong> <span><%= @household_account.clothing_beauty %>円</span>
+      <strong>美容・衣服:</strong> <span><%= number_with_delimiter(@household_account.clothing_beauty) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>趣味・娯楽:</strong> <span><%= @household_account.entertainment %>円</span>
+      <strong>趣味・娯楽:</strong> <span><%= number_with_delimiter(@household_account.entertainment) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>交通費:</strong> <span><%= @household_account.transportation %>円</span>
+      <strong>交通費:</strong> <span><%= number_with_delimiter(@household_account.transportation) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>健康・医療:</strong> <span><%= @household_account.health_medical %>円</span>
+      <strong>健康・医療:</strong> <span><%= number_with_delimiter(@household_account.health_medical) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>教育費:</strong> <span><%= @household_account.education %>円</span>
+      <strong>教育費:</strong> <span><%= number_with_delimiter(@household_account.education) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>保険料:</strong> <span><%= @household_account.insurance %>円</span>
+      <strong>保険料:</strong> <span><%= number_with_delimiter(@household_account.insurance) %>円</span>
     </div>
     <div class="detail-item">
-      <strong>特別費:</strong> <span><%= @household_account.special_expenses %>円</span>
+      <strong>特別費:</strong> <span><%= number_with_delimiter(@household_account.special_expenses) %>円</span>
     </div>
   </div>
   <hr class="divider">
   <div class="detail-item total">
-    <strong>合計:</strong> <span><%= @household_account.total %>円</span>
+    <strong>合計:</strong> <span><%= number_with_delimiter(@household_account.total) %>円</span>
+    <span class="<%= @total_result == '達成' ? 'achievement' : 'non-achievement' %>">
+      (<%= @total_result %>)
+    </span>
   </div>
   <div class="comment-box">
     <strong>メモ:</strong> <p><%= @household_account.description %></p>
