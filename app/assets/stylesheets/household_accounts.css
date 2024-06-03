@@ -71,10 +71,11 @@ body {
 
 /* 特徴セクション */
 .features {
+  height: 400px;
   padding: 40px 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
-  margin-bottom: 40px;
+  margin: 40px 20px;
 }
 
 .features h2 {
@@ -203,7 +204,7 @@ body {
   background-color: #004b87;
 }
 
-/* 今年の家計簿投稿 */
+/* 家計簿投稿一覧 */
 .household-accounts ul {
   display: flex;
   flex-wrap: wrap;
