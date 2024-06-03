@@ -5,12 +5,37 @@
 .header {
   background-color: #004b87;
   padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header a {
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
   color: #ffffff;
   font-size: 24px;
   text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 /* フッター */
@@ -35,6 +60,101 @@ body {
   padding: 0;
 }
 
+.section {
+  padding: 40px 20px;
+  margin: 20px 0;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 特徴セクション */
+.features {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.features h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.feature-item {
+  flex-basis: calc(33.3333% - 20px);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* 今年の家計簿投稿一覧セクション */
+.household-accounts-list, .tips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.household-account, .tip {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex-basis: calc(33.3333% - 20px);
+  box-sizing: border-box;
+}
+
+.household-account h3, .tip h3 {
+  margin-top: 0;
+}
+
+.household-account p, .tip p {
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn-secondary {
+  background-color: #004b87;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #003366;
+}
+
+/* 家計改善のコツセクション */
 .post-section {
   height: 400px;
   margin: 40px 20px;
@@ -83,60 +203,6 @@ body {
 
 .post-button:hover {
   background-color: #004b87;
-}
-
-.section {
-  padding: 40px 20px;
-  margin: 20px 0;
-}
-
-.section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.household-accounts-list, .tips-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-}
-
-.household-account, .tip {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  flex-basis: calc(33.3333% - 20px);
-  box-sizing: border-box;
-}
-
-.household-account h3, .tip h3 {
-  margin-top: 0;
-}
-
-.household-account p, .tip p {
-  margin: 10px 0;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 15px;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-.btn-secondary {
-  background-color: #004b87;
-  color: #ffffff;
-}
-
-.btn-secondary:hover {
-  background-color: #003366;
 }
 
 /* 今年の家計簿投稿 */
@@ -209,7 +275,7 @@ body {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .form-group label {
@@ -256,45 +322,65 @@ body {
 }
 
 /* 家計簿詳細ページ */
-.household-account-detail {
+.detail-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 28px;
+}
+
+.household-account-details {
   max-width: 800px;
-  margin: 50px auto;
+  margin: 60px auto;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.household-account-detail h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.household-account-detail ul {
-  list-style: none;
-  padding: 0;
-}
-
-.household-account-detail li {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.action-buttons {
-  margin-top: 20px;
-  display: flex;
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 15px;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
+.detail-item {
+  padding: 10px;
+  background-color: #fff;
   border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.total {
+  grid-column: span 2;
+  font-weight: bold;
+}
+
+.comment-box {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.action-left {
+  display: flex;
+}
+
+.action-right {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.actions .btn {
+  margin: 5px;
 }
 
 .btn-primary {

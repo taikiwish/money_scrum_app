@@ -1,5 +1,13 @@
 <header class='header'>
   <div class="header-content">
     <a href="/" class="logo">Money Scram</a>
+    <nav class="nav-links">
+      <%= link_to 'HOME', "/", class: 'nav-link' %>
+      <%= link_to '予算登録', "#", class: 'nav-link' %>
+      <%= link_to '家計簿投稿', new_household_account_path, class: 'nav-link' %>
+      <%= link_to '家計簿一覧', "#", class: 'nav-link' %>
+      <%= link_to '家計改善のコツ', "#", class: 'nav-link' %>
+      <%= link_to '現在のランク：', "#", class: 'nav-link' %>
+    </nav>
   </div>
 </header>
