@@ -1,59 +1,66 @@
 <%= render 'shared/header' %>
 
 <div class="details">
-  <h1 class="detail-title">月間予算</h1>
-  <% @budgets.each do |budget| %>
-    <div class="budget-item">
-      <div class="details-grid">
-        <div class="detail-item">
-          <strong>住宅:</strong> <span><%= budget.housing_budget %>円</span>
+  <div class="budget-list">
+    <h1 class="detail-title">月間予算</h1>
+    <% if @budgets.any? %>
+      <% @budgets.each do |budget| %>
+        <div class="details-grid">
+          <div class="detail-item">
+            <strong>住宅:</strong> <span><%= budget.housing_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>食費:</strong> <span><%= budget.food_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>水道光熱費:</strong> <span><%= budget.utilities_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>通信費:</strong> <span><%= budget.communication_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>日用品:</strong> <span><%= budget.daily_goods_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>美容・衣服:</strong> <span><%= budget.clothing_beauty_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>趣味・娯楽:</strong> <span><%= budget.entertainment_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>交通費:</strong> <span><%= budget.transportation_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>健康・医療:</strong> <span><%= budget.health_medical_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>教育費:</strong> <span><%= budget.education_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>保険料:</strong> <span><%= budget.insurance_budget %>円</span>
+          </div>
+          <div class="detail-item">
+            <strong>特別費:</strong> <span><%= budget.special_expenses_budget %>円</span>
+          </div>
         </div>
-        <div class="detail-item">
-          <strong>食費:</strong> <span><%= budget.food_budget %>円</span>
+        <hr class="divider">
+        <div class="detail-item total">
+          <strong>合計:</strong> <span><%= budget.total_budget %>円</span>
         </div>
-        <div class="detail-item">
-          <strong>水道光熱費:</strong> <span><%= budget.utilities_budget %>円</span>
+        <div class="actions">
+          <div class="action-left">
+            <%= link_to '編集', edit_budget_path(budget), class: 'btn btn-primary' %>
+            <%= link_to '削除', budget_path(budget), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+          </div>
         </div>
-        <div class="detail-item">
-          <strong>通信費:</strong> <span><%= budget.communication_budget %>円</span>
-        </div>
-        <div class="detail-item">
-          <strong>日用品:</strong> <span><%= budget.daily_goods_budget %>円</span>
-        </div>
-        <div class="detail-item">
-          <strong>美容・衣服:</strong> <span><%= budget.clothing_beauty_budget %>円</span>
-        </div>
-        <div class="detail-item">
-          <strong>趣味・娯楽:</strong> <span><%= budget.entertainment_budget %>円</span>
-        </div>
-        <div class="detail-item">
-          <strong>交通費:</strong> <span><%= budget.transportation_budget %>円</span>
-        </div>
-        <div class="detail-item">
-          <strong>健康・医療:</strong> <span><%= budget.health_medical_budget %>円</span>
-        </div>
-        <div class="detail-item">
-          <strong>教育費:</strong> <span><%= budget.education_budget %>円</span>
-        </div>
-        <div class="detail-item">
-          <strong>保険料:</strong> <span><%= budget.insurance_budget %>円</span>
-        </div>
-        <div class="detail-item">
-          <strong>特別費:</strong> <span><%= budget.special_expenses_budget %>円</span>
-        </div>
+      <% end %>
+    <% else %>
+      <div class="no-budget-message">
+        <p>現在、予算が登録されていません。</p>
+        <%= link_to '新しい予算を追加', new_budget_path, class: 'btn btn-success' %>
       </div>
-      <hr class="divider">
-      <div class="detail-item total">
-        <strong>合計:</strong> <span><%= budget.total_budget %>円</span>
-      </div>
-      <div class="actions">
-        <div class="action-left">
-          <%= link_to '編集', edit_budget_path(budget), class: 'btn btn-primary' %>
-          <%= link_to '削除', budget_path(budget), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
-        </div>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <%= render 'shared/footer' %>

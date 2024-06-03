@@ -261,9 +261,9 @@ body {
 }
 
 .form-title {
-  font-size: 24px;
-  margin-bottom: 20px;
   text-align: center;
+  margin: 20px 0;
+  font-size: 28px;
 }
 
 .form-grid {

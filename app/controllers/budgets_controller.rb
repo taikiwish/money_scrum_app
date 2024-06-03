@@ -13,9 +13,9 @@ class BudgetsController < ApplicationController
     @budget = Budget.new(budget_params)
 
     if @budget.save
-      redirect_to budgets_path, notice: '予算が登録されました。'
+      redirect_to budgets_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -24,15 +24,15 @@ class BudgetsController < ApplicationController
 
   def update
     if @budget.update(budget_params)
-      redirect_to budgets_path, notice: '予算が更新されました。'
+      redirect_to budgets_path
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @budget.destroy
-    redirect_to budgets_path, notice: '予算が削除されました。'
+    redirect_to budgets_path
   end
 
   private
