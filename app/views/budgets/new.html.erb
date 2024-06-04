@@ -1,7 +1,9 @@
 <%= render 'shared/header' %>
 
 <div class="household-account-form-container">
-  <h2 class="form-title">予算新規登録</h2>
+  <h2 class="form-title">月間予算の登録</h2>
+  <p>まずは、月の予算を登録しましょう！後からでも編集可能です！</p>
+
   <%= form_with(model: @budget, local: true) do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>

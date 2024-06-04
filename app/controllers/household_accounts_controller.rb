@@ -8,6 +8,9 @@ class HouseholdAccountsController < ApplicationController
   end
 
   def new
+    if @budget.nil?
+      redirect_to new_budget_path and return
+    end
     @household_account = HouseholdAccount.new
   end
 

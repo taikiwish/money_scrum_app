@@ -1,5 +1,5 @@
 class BudgetsController < ApplicationController
-  before_action :set_budget, only: [:edit, :update, :destroy]
+  before_action :set_budget, only: [:edit, :update]
 
   def index
     @budgets = Budget.all
@@ -28,11 +28,6 @@ class BudgetsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-  end
-
-  def destroy
-    @budget.destroy
-    redirect_to budgets_path
   end
 
   private
