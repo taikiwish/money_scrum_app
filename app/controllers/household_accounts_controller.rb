@@ -1,7 +1,8 @@
 class HouseholdAccountsController < ApplicationController
+  before_action :set_budget, only: [:index, :show, :new, :create]
+
   def index
     @household_accounts = HouseholdAccount.order(created_at: :desc)
-    @budget = Budget.first # 一定の予算を取得
     @results = @household_accounts.each_with_object({}) do |account, hash|
       hash[account.id] = calculate_total_result(account, @budget)
     end
@@ -9,7 +10,7 @@ class HouseholdAccountsController < ApplicationController
 
   def new
     if @budget.nil?
-      redirect_to new_budget_path and return
+      redirect_to new_budget_path
     end
     @household_account = HouseholdAccount.new
   end
@@ -25,7 +26,6 @@ class HouseholdAccountsController < ApplicationController
 
   def show
     @household_account = HouseholdAccount.find(params[:id])
-    @budget = Budget.first # 一定の予算を取得
     @total_result = calculate_total_result(@household_account, @budget)
   end
 
@@ -60,5 +60,9 @@ private
 
   def calculate_total_result(household_account, budget)
     household_account.total <= budget.total_budget ? '達成' : '未達'
+  end
+
+  def set_budget
+    @budget = Budget.first
   end
 end
