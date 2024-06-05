@@ -5,7 +5,7 @@
       <%= link_to 'HOME', "/", class: 'nav-link' %>
       <%= link_to '予算登録', budgets_path, class: 'nav-link' %>
       <%= link_to '家計簿投稿', new_household_account_path, class: 'nav-link' %>
-      <%= link_to '現在のランク：', "#", class: 'nav-link' %>
+      <span class="nav-link">現在のランク：<%= @rank %></span>
     </nav>
   </div>
 </header>

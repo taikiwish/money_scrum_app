@@ -69,9 +69,59 @@ body {
   text-align: center;
 }
 
+/* 案内セクション */
+.post-section {
+  height: 400px;
+  margin: 40px 20px;
+  padding: 20px;
+  background-color: #fafbfb;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+}
+
+.post-text {
+  text-align: left;
+  max-width: 70%;
+}
+
+.main-title {
+  font-size: 36px;
+  margin: 0 0 10px;
+}
+
+.sub-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.post-button-container {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.post-button {
+  background-color: #1b65a1;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.post-button:hover {
+  background-color: #004b87;
+}
+
 /* 特徴セクション */
 .features {
-  height: 400px;
   padding: 40px 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -151,57 +201,6 @@ body {
 
 .btn-secondary:hover {
   background-color: #003366;
-}
-
-/* 家計改善のコツセクション */
-.post-section {
-  height: 400px;
-  margin: 40px 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.post-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px;
-}
-
-.post-text {
-  text-align: left;
-  max-width: 70%;
-}
-
-.main-title {
-  font-size: 36px;
-  margin: 0 0 10px;
-}
-
-.sub-title {
-  font-size: 18px;
-  margin: 0;
-}
-
-.post-button-container {
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.post-button {
-  background-color: #1b65a1;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 18px;
-  display: inline-block;
-}
-
-.post-button:hover {
-  background-color: #004b87;
 }
 
 /* 家計簿投稿一覧 */
@@ -434,4 +433,16 @@ body {
 .achievement-image img {
   width: 250px;
   height: auto;
+}
+
+/* ランク設定 */
+.rank-display {
+  font-size: 16px;
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+.rank-display .rank {
+  font-weight: bold;
+  color: yellow; /* ランクの色を変更できます */
 }
