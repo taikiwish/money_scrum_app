@@ -1,58 +1,73 @@
-## テーブル設計
+# Money Scram
 
-### HouseholdAccounts テーブル
+## アプリケーション概要
+月の予算と家計簿(結果)を投稿し、振り返りの機会を作ることで家計改善に繋げるアプリ
 
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| month_id           | integer    | null: false                    |
-| housing            | integer    | null: false                    |
-| food               | integer    | null: false                    |
-| utilities          | integer    | null: false                    |
-| communication      | integer    | null: false                    |
-| daily_goods        | integer    | null: false                    |
-| clothing_beauty    | integer    | null: false                    |
-| entertainment      | integer    | null: false                    |
-| transportation     | integer    | null: false                    |
-| health_medical     | integer    | null: false                    |
-| education          | integer    | null: false                    |
-| insurance          | integer    | null: false                    |
-| special_expenses   | integer    | null: false                    |
-| total              | integer    | null: false                    |
-| description        | text       |                                |
+## URL
+[https://money-scrum-app.onrender.com](https://money-scrum-app.onrender.com)
 
-#### Association
-- has_one :budget
-- has_many :comments
+## Basic認証
+- Basic認証パスワード: admin
+- Basic認証ID: 2222
 
-### Budgets テーブル
+## 利用方法
 
-| Column                    | Type       | Options                        |
-| ------------------------- | ---------- | ------------------------------ |
-| housing_budget            | integer    | null: false                    |
-| food_budget               | integer    | null: false                    |
-| utilities_budget          | integer    | null: false                    |
-| communication_budget      | integer    | null: false                    |
-| daily_goods_budget        | integer    | null: false                    |
-| clothing_beauty_budget    | integer    | null: false                    |
-| entertainment_budget      | integer    | null: false                    |
-| transportation_budget     | integer    | null: false                    |
-| health_medical_budget     | integer    | null: false                    |
-| education_budget          | integer    | null: false                    |
-| insurance_budget          | integer    | null: false                    |
-| special_expenses_budget   | integer    | null: false                    |
-| total_budget              | integer    | null: false                    |
+### 予算投稿
+1. トップページのヘッダーから予算登録を行う（予算登録を行なっていない場合に、家計簿を投稿しようとすると自動遷移します）
+2. 家計簿12項目に関する予算を入力し、登録ボタンを押す
+3. 現在設定中の予算を確認する際には、トップページのヘッダーの予算登録のメニューを押すと表示される（編集も可能）
 
-#### Association
-- has_many :household_accounts
-- has_many :comments
+### 家計簿投稿
+1. トップページのヘッダー又は「家計簿を投稿するボタン」から家計簿投稿する
+2. 年月の選択を行い、家計簿12項目に関する結果値を入力し、振り返りメモを入力し、登録ボタンを押す
+3. 登録した家計簿はトップページ上に表示される
 
-### Comments テーブル
+### ランク制度
+1. 一覧ページから目標をクリックして、目標の詳細を確認する
+2. 応援したい目標があれば、ユーザーのフォロー・目標のお気に入り・コメントやメッセージを送る などを行
 
-| Column               | Type       | Options                        |
-| -------------------- | ---------- | ------------------------------ |
-| content              | text       | null: false                    |
-| household_account    | references | null: false, foreign_key: true |
+### 家計改善のコツ
+1. トップページのヘッダーから実践中の家計改善のコツ登録を行う
+2. 見出し、簡単なメモ、URLの登録が可能で、実践中の家計改善のコツを振り返ることができる
 
-#### Association
+## アプリケーションを作成した背景
+世の中に家計簿に関するアプリケーションはかなり増えてきましたが、「なかなか継続できない」「継続していても家計簿をつけているだけ」で家計改善に繋がらないことも多いです。
+「楽しく家計簿を継続できるアプリケーション」を作成したかったのでランク制度を取り入れて、ご褒美に向けてコツコツ頑張れる仕組みを作りました。
 
-- belongs_to :household_account
+## 洗い出した要件
+更新予定を記入
+
+## 実装した機能についての画像やGIFおよびその説明
+〜画像やGIF、説明を記載〜
+
+## 実装予定の機能
+現状、UIを高める為に下記項目を実装中。
+・入力フォーム内にある合計値の自動算出
+・年度毎に家計簿を振り分け
+・家計簿円グラフの作成
+今後はログイン時のSNS認証やSNSでの共有機能を実装予定。
+
+## データベース設計
+
+![データベース設計](https://money-scrum-app.onrender.com/assets/database_design.png)
+
+## 画面遷移図
+
+![画面遷移図](https://money-scrum-app.onrender.com/assets/screen_transition.png)
+
+## 開発環境
+- フロントエンド
+- バックエンド
+- インフラ
+- テスト
+- テキストエディタ
+- タスク管理
+
+## ローカルでの動作方法
+以下のコマンドを順に実行:
+```sh
+% git clone https://github.com/taikiwish/money_scrum_app.git
+% cd money_scrum_app
+% bundle install
+% yarn install
+
