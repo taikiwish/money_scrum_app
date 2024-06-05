@@ -11,7 +11,7 @@ class HouseholdAccountsController < ApplicationController
 
   def new
     if @budget.nil?
-      redirect_to new_budget_path
+      redirect_to budgets_path
     end
     @household_account = HouseholdAccount.new
   end
