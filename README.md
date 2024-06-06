@@ -34,11 +34,6 @@
 世の中に家計簿に関するアプリケーションはかなり増えてきましたが、「なかなか継続できない」「継続していても家計簿をつけているだけ」で家計改善に繋がらないことも多いです。
 「楽しく家計簿を継続できるアプリケーション」を作成したかったのでランク制度を取り入れて、ご褒美に向けてコツコツ頑張れる仕組みを作りました。
 
-## 洗い出した要件
-更新予定を記入
-
-## 実装した機能についての画像やGIFおよびその説明
-〜画像やGIF、説明を記載〜
 
 ## 実装予定の機能
 現状、UIを高める為に下記項目を実装中。
@@ -49,11 +44,11 @@
 
 ## データベース設計
 
-![データベース設計](https://money-scrum-app.onrender.com/assets/database_design.png)
+[![Image from Gyazo](https://i.gyazo.com/bff534215bbe70b2e5fdb51c1587f2b4.png)](https://gyazo.com/bff534215bbe70b2e5fdb51c1587f2b4)
 
 ## 画面遷移図
 
-![画面遷移図](https://money-scrum-app.onrender.com/assets/screen_transition.png)
+[![Image from Gyazo](https://i.gyazo.com/c16dc029d3c2c815f921514b4f0e6393.png)](https://gyazo.com/c16dc029d3c2c815f921514b4f0e6393)
 
 ## 開発環境
 - フロントエンド
