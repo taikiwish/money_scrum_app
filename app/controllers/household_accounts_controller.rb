@@ -1,6 +1,5 @@
 class HouseholdAccountsController < ApplicationController
   before_action :set_budget, only: [:index, :show, :new, :create]
-  before_action :set_rank
 
   def index
     @household_accounts = HouseholdAccount.order(created_at: :desc)
@@ -67,33 +66,4 @@ private
     @budget = Budget.first
   end
 
-  def set_rank
-    @rank = calculate_rank
-  end
-
-  def calculate_rank
-    budget = Budget.first
-    return 'D' if budget.nil?
-
-    household_accounts = HouseholdAccount.all
-    return 'D' if household_accounts.empty?
-
-    achieved_count = household_accounts.select { |account| account.total <= budget.total_budget }.count
-    total_count = household_accounts.count
-
-    achievement_rate = (achieved_count.to_f / total_count) * 100
-
-    case achievement_rate
-    when 90..100
-      'S'
-    when 80...90
-      'A'
-    when 70...80
-      'B'
-    when 60...70
-      'C'
-    else
-      'D'
-    end
-  end
 end
